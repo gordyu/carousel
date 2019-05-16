@@ -1,13 +1,6 @@
-# Project Name
+# 5arki5 5ervice
 
-> Project description
-
-## Related Projects
-
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+> As the name implies, this is the service portion of the project.
 
 ## Table of Contents
 
@@ -15,25 +8,19 @@
 1. [Requirements](#requirements)
 1. [Development](#development)
 
-## Usage
-
-> Some usage instructions
-
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
-
 ### Installing Dependencies
 
 From within the root directory:
 
-```sh
-npm install -g webpack
+```
 npm install
 ```
+
+#### Running the Service
+
+From within the root directory:
+
+Server: npm start
+
+Webpack: npm run build:dev
 
