@@ -1,6 +1,6 @@
 {
   "name": "photo_carousel",
-  "description": "As the name implies, this is the service portion of the project for the photo carousel.",
+  "description": "This is the service portion of the project for the photo carousel.",
   "author": "Sarkis Sos",
   "license": "ISC",
   "engines": {
@@ -15,6 +15,7 @@
     "bluebird": "^3.3.4",
     "body-parser": "^1.17.0",
     "express": "^4.15.0",
+    "faker": "^4.1.0",
     "mongoose": "^4.9.6",
     "nodemon": "^1.19.0",
     "react": "^15.4.2",

@@ -10,9 +10,9 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/../public'));
 
-app.get('/', (req, res) => {
+app.get('/homes', (req, res) => {
   res.status(200);
-  console.log('GET it');
+  console.log('GET success');
 });
 
 
