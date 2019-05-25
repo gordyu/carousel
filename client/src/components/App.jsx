@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Photos from './Photos';
 
 class App extends React.Component {
   constructor(props) {
@@ -7,6 +8,17 @@ class App extends React.Component {
   }
 
   render() {
+    return (
+      <div className="App">
+        <Photos />
+      </div>
+    );
+  }
+}
+
+export default App;
+
+/*
     return (
       <div>
         <div className="leftDiv">
@@ -26,7 +38,4 @@ class App extends React.Component {
         </div>
       </div>
     );
-  }
-}
-
-export default App;
+*/
