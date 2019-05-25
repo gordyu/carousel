@@ -3,6 +3,11 @@ const frisby = require('frisby');
 const Joi = frisby.Joi;
 
 describe('TEST THE API', () => {
+  it('should have a JSON Content-Type header', function () {
+    return frisby.get('http://localhost:3004/homes')
+      .expect('header', 'Content-Type', 'application/json; charset=utf-8');
+  });
+
   it('should respond with a status of 200', () => {
     return frisby.get('http://localhost:3004/homes')
       .expect('status', 200);
