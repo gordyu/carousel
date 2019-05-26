@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Photos from './Photos';
+import Photos from './Photos.jsx';
 
 class App extends React.Component {
   constructor(props) {

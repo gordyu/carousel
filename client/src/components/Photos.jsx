@@ -1,18 +1,22 @@
 
 import React from 'react';
-import arrowRight from './image_location';
-import arrowLeft from './image_location';
+import left from '../images/left.png';
+import right from '../images/right.png';
 
-export class Photos extends React.Component {
-  constructor() {
-    super();
+class Photos extends React.Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
       currentImageIndex: 0,
-      // Will need to determine if I'll use S3 or load images here
-      image: [], 
-      arrowNext: arrowRight,
-      arrowPrev: arrowLeft
+      images: [
+        'https://s3-us-west-1.amazonaws.com/propimage55/1.webp',
+        'https://s3-us-west-1.amazonaws.com/propimage55/2.webp',
+        'https://s3-us-west-1.amazonaws.com/propimage55/3.webp',
+        'https://s3-us-west-1.amazonaws.com/propimage55/4.webp',
+        'https://s3-us-west-1.amazonaws.com/propimage55/5.webp',
+        'https://s3-us-west-1.amazonaws.com/propimage55/6.webp',
+      ]
     }
 
     this.nextSlide = this.nextSlide.bind(this);
@@ -40,25 +44,26 @@ export class Photos extends React.Component {
   }
 
   render() {
+
     const index = this.state.currentImageIndex;
     let firstFiveVideo = this.state.images.slice(index, index + 5);
-
+    
     if (firstFiveVideo.length < 5) {
       firstFiveVideo = firstFiveVideo.concat(this.state.images.slice(0, 5 - firstFiveVideo.length));
     }
-
+    
     return (
       <div>
-        {/* This is the left arrow */}
-        <img src={this.state.arrowPrev} onClick={this.prevSlide} />
+        <img className="leftArrow" src={left} onClick={this.prevSlide} />
 
         {firstFiveVideo.map((image, index) => {
-          <img key={index} src={image} alt="" />
+          return <img className="pictures" key={index} src={image} alt="" />
         })}
 
-        {/* this is the right arrow */}
-        <img src={this.state.arrowNext} onClick={this.nextSlide} />
+        <img className="rightArrow" src={right} onClick={this.nextSlide} />
       </div>
     )
   }
 }
+
+export default Photos;

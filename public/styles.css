@@ -4,3 +4,12 @@
 .rightDiv {
   border: solid black 1px;
 }
+
+.leftArrow, .rightArrow {
+  height: 25px;
+  width:  15px;
+}
+.pictures {
+  height: 25%;
+  width: 25%;
+}
