@@ -1,15 +1,24 @@
-.leftDiv {
-  border: solid blue 1px;
-}
-.rightDiv {
-  border: solid black 1px;
-}
+html, body, #app, .carousel {
+  height: 100%;
+  margin: 0;
+  width: 100%; }
 
-.leftArrow, .rightArrow {
-  height: 25px;
-  width:  15px;
-}
-.pictures {
-  height: 25%;
-  width: 25%;
-}
+.image-slide {
+  height: 900px;
+  width: 900px;
+  transition: background-image .3s ease-in-out; }
+
+.slide-arrow {
+  color: #14B6D4;
+  cursor: pointer;
+  font-size: 2rem;
+  position: fixed;
+  top: 50%; }
+
+.slide-arrow.right {
+  right: 1rem; }
+
+.slide-arrow.left {
+  left: 1rem; }
+
+/*# sourceMappingURL=styles.css.map */
