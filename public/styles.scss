@@ -1,0 +1,30 @@
+
+html, body, #app, .carousel {
+	height:100%;
+	margin: 0;
+	width: 100%;
+}
+
+.image-slide {
+	height: 900px;
+	width: 900px;
+	transition: background-image .3s ease-in-out;
+}
+
+$theme-blue: #14B6D4;
+
+.slide-arrow {
+	color: $theme-blue;
+	cursor: pointer;
+	font-size: 2rem;
+	position: fixed;
+	top: 50%;
+}
+
+.slide-arrow.right {
+	right: 1rem;
+}
+
+.slide-arrow.left {
+	left: 1rem;
+}
