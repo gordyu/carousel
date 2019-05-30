@@ -1,5 +1,55 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-html, body, #app, .carousel {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// CSS RESET ABOVE
+
+html, body, .App, .carousel {
 	height:100%;
 	margin: 0;
 	width: 100%;
@@ -27,4 +77,57 @@ $theme-blue: #14B6D4;
 
 .slide-arrow.left {
 	left: 1rem;
+}
+
+// Carousel Stuff Above
+
+.wrapper {
+	display: grid;
+	grid-gap: 0px;
+	grid-template-columns: repeat(4, [col] auto ) ;
+	grid-template-rows: repeat(2, [row] auto  );
+	background-color: black;
+}
+
+.box {
+	background-color: black;
+	border-radius: 0px;
+	padding: 1px;
+}
+
+.box .box {
+	background-color: black;
+}
+
+.a {
+	grid-column: col / span 2;
+	grid-row: row;
+}
+
+.b{
+	grid-column: col 4 / span 2 ;
+	grid-row: row 1;
+	display: grid;
+	grid-gap: 0px;
+	grid-template-columns: 1fr 1fr;
+}
+
+.c {
+	grid-column: 1 / 4;
+	grid-row: 1;
+}
+
+.d {
+	grid-column: 2;
+	grid-row: 1;
+}
+
+.e {
+	grid-column: 1;
+	grid-row: 2;
+}
+
+.f {
+	grid-column: 2;
+	grid-row: 2;
 }
