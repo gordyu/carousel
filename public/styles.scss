@@ -47,7 +47,7 @@ table {
 	border-spacing: 0;
 }
 
-// CSS RESET ABOVE
+// CAROUSEL STYLING
 
 html, body, .App, .carousel {
 	height:100%;
@@ -61,10 +61,10 @@ html, body, .App, .carousel {
 	transition: background-image .3s ease-in-out;
 }
 
-$theme-blue: #14B6D4;
+$theme-white: white;
 
 .slide-arrow {
-	color: $theme-blue;
+	color: $theme-white;
 	cursor: pointer;
 	font-size: 2rem;
 	position: fixed;
@@ -79,7 +79,7 @@ $theme-blue: #14B6D4;
 	left: 1rem;
 }
 
-// Carousel Stuff Above
+// CSS GRID - FRONT PAGE
 
 .wrapper {
 	display: grid;
@@ -105,7 +105,7 @@ $theme-blue: #14B6D4;
 }
 
 .b{
-	grid-column: col 4 / span 2 ;
+	grid-column: col 4 / span 2;
 	grid-row: row 1;
 	display: grid;
 	grid-gap: 0px;
@@ -131,3 +131,60 @@ $theme-blue: #14B6D4;
 	grid-column: 2;
 	grid-row: 2;
 }
+
+// Modal
+
+.modal-window {
+  position: fixed;
+	background-color: rgb(61, 56, 56);
+  top: 0;
+  right: 0;
+	bottom: 0;
+  left: 0;
+	z-index: 1;
+	opacity: 0;
+	overflow: auto;
+  pointer-events: none;
+  // -webkit-transition: all 0.3s;
+  // -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  &:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  &>div {
+		width: 1500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // transform: translate(-50%, -50%);
+		padding: 0px;
+		padding-top: 50px;
+  }
+}
+
+.modal-close {
+  color: white;
+  line-height: 50px;
+	font-size: 400%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+	align-items: center;
+}
+
+// .interior {
+//   background-color: #fefefe;
+//   margin: 15% auto; /* 15% from the top and centered */
+//   padding: 20px;
+//   border: 1px solid #888;
+//   width: 80%; /* Could be more or less, depending on screen size */
+// }
