@@ -2,6 +2,18 @@ const chai = require('chai');
 const expect = chai.expect;
 const request = require('request');
 const mongoose = require('mongoose');
+const Home = require('../database/index');
+
+describe('Homes Model', function () {
+
+  it('User should be a Mongoose model', function () {
+    expect(new Home.Home()).to.be.instanceOf(mongoose.Model);
+  });
+
+  it('should have a schema', function () {
+    expect(Home.Home.schema).to.exist;
+  });
+});
 
 describe('Testing the Database', () => {
 
@@ -26,5 +38,3 @@ describe('Testing the Database', () => {
     });
   });
 });
-
-// Note: My service does NOT require anything but a request for data.

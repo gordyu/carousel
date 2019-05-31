@@ -4,7 +4,7 @@ mongoose.connect('mongodb://localhost/homes');
 
 const homeSchema = new mongoose.Schema({
   propertyId: Number,
-  imageId: Number,
+  imageURL: String,
   description: String
 });
 
@@ -18,7 +18,7 @@ let getHomesForServer = function(callback) {
       callback(repos);
     }
   })
-  .limit(5)
+  .limit(50)
   .sort({ 'name': 1});
 }
 

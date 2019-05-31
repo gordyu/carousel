@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Carousel from './Carousel.jsx';
+import Modal from './Modal.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,9 +9,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <Carousel />
-      </div>
+      <Modal />
     );
   }
 }
