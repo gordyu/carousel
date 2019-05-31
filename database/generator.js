@@ -4,7 +4,7 @@ const faker = require('faker');
 
 let seeds = [];
 
-for (var i = 0; i < 50; i++) {
+for (var i = 0; i < 43; i++) {
   seeds.push(Home.Home({
     // propertyId: faker.random.number(),
     propertyId: i,

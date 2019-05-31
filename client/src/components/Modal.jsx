@@ -13,7 +13,7 @@ const Modal = () => (
             <div className="box c"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/1.webp" height="213" width="380"></img></a></div>
             <div className="box d"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/2.webp" height="213" width="380"></img></a></div>
             <div className="box e"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/3.webp" height="213" width="380"></img></a></div>
-            <div className="box f"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/4.webp" height="213" width="380"></img></a></div>
+            <div className="box f"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/7.webp" height="213" width="380"></img></a></div>
           </div>
         </div>
 

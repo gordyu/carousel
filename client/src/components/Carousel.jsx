@@ -5,6 +5,7 @@ import Arrow from './Arrow.jsx';
 import $ from 'jquery';
 
 const imgUrls = [];
+const imgDesc = [];
 
 class Carousel extends React.Component {
 	constructor (props) {
@@ -26,6 +27,7 @@ class Carousel extends React.Component {
 			success: data => {
 				for (var i = 0; i < data.length; i++) {
 					imgUrls.push(data[i].imageURL);
+					imgDesc.push(data[i].description);
 				}
 			},
 			error: () => console.log('GET FAILED!')
