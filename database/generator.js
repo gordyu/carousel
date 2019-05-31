@@ -4,25 +4,26 @@ const faker = require('faker');
 
 let seeds = [];
 
-for (var i = 0; i < 100; i++) {
-  seeds.push(Home({
-    propertyId: faker.random.number(),
-    imageId: faker.random.number(),
+for (var i = 0; i < 50; i++) {
+  seeds.push(Home.Home({
+    // propertyId: faker.random.number(),
+    propertyId: i,
+    imageURL: `https://s3-us-west-1.amazonaws.com/propimage55/${i}.webp`,
     description: faker.lorem.sentence()
   }));
 }
 
-Home.deleteMany({}, (err) => {
+Home.Home.deleteMany({}, (err) => {
   if (err) {
     console.log(err);
   } else {
     console.log('database cleared');
-    Home.insertMany(seeds, (err) => {
+    Home.Home.insertMany(seeds, (err) => {
       if (err) {
         console.log(err);
       } else {
         console.log('database seeded!') 
-        Home.find({}, (err, result) => {
+        Home.Home.find({}, (err, result) => {
           if (err) {
             console.log(err);
           } else {

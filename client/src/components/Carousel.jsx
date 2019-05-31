@@ -2,22 +2,16 @@
 import React from 'react';
 import ImageSlide from './ImageSlide.jsx';
 import Arrow from './Arrow.jsx';
+import $ from 'jquery';
 
-const imgUrls = [
-  'https://s3-us-west-1.amazonaws.com/propimage55/0.webp',
-  'https://s3-us-west-1.amazonaws.com/propimage55/1.webp',
-  'https://s3-us-west-1.amazonaws.com/propimage55/2.webp',
-  'https://s3-us-west-1.amazonaws.com/propimage55/3.webp',
-  'https://s3-us-west-1.amazonaws.com/propimage55/4.webp',
-  'https://s3-us-west-1.amazonaws.com/propimage55/5.webp',
-  'https://s3-us-west-1.amazonaws.com/propimage55/6.webp'
-];
+const imgUrls = [];
 
 class Carousel extends React.Component {
 	constructor (props) {
 		super(props);
 		
 		this.state = {
+			homes: [],
 			currentImageIndex: 0
 		};
 		
@@ -25,6 +19,19 @@ class Carousel extends React.Component {
 		this.previousSlide = this.previousSlide.bind(this);
 	}
 	
+	componentDidMount() {
+		$.ajax({
+			url: 'http://localhost:3004/homes',
+			method: 'GET',
+			success: data => {
+				for (var i = 0; i < data.length; i++) {
+					imgUrls.push(data[i].imageURL);
+				}
+			},
+			error: () => console.log('GET FAILED!')
+		});
+	}
+
 	previousSlide () {
 		const lastIndex = imgUrls.length - 1;
 		const { currentImageIndex } = this.state;

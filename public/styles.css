@@ -51,7 +51,7 @@ html, body, .App, .carousel {
   width: 100%; }
 
 .image-slide {
-  height: 1000px;
+  height: 500px;
   width: 1500px;
   transition: background-image .3s ease-in-out; }
 
