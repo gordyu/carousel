@@ -29,8 +29,7 @@ class Carousel extends React.Component {
 					imgUrls.push(data[i].imageURL);
 					imgDesc.push(data[i].description);
 				}
-			},
-			error: () => console.log('GET FAILED!')
+			}
 		});
 	}
 
