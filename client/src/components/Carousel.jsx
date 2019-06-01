@@ -2,6 +2,7 @@
 import React from 'react';
 import ImageSlide from './ImageSlide.jsx';
 import Arrow from './Arrow.jsx';
+import Description from './Desc.jsx';
 import $ from 'jquery';
 
 const imgUrls = [];
@@ -60,6 +61,7 @@ class Carousel extends React.Component {
 			<div className="carousel">
 				<Arrow direction="left" clickFunction={ this.previousSlide } glyph="&#9664;" />
 				<ImageSlide url={ imgUrls[this.state.currentImageIndex] } />
+				<Description desc={ imgDesc[this.state.currentImageIndex] } />
 				<Arrow direction="right" clickFunction={ this.nextSlide } glyph="&#9654;" />
 			</div>
 		);

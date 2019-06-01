@@ -87,6 +87,7 @@ $theme-white: white;
 	grid-template-columns: repeat(4, [col] auto ) ;
 	grid-template-rows: repeat(2, [row] auto  );
 	background-color: black;
+	border: solid black 2px;
 }
 
 .box {
@@ -102,6 +103,9 @@ $theme-white: white;
 .a {
 	grid-column: col / span 2;
 	grid-row: row;
+	max-height: 435px;
+	max-width: 100%;
+	overflow: hidden;
 }
 
 .b{
@@ -113,7 +117,7 @@ $theme-white: white;
 }
 
 .c {
-	grid-column: 1 / 4;
+	grid-column: 1;
 	grid-row: 1;
 }
 
@@ -132,6 +136,36 @@ $theme-white: white;
 	grid-row: 2;
 }
 
+.c, .d, .e, .f {
+	overflow: hidden;
+	position: initial;
+	max-height: 215px;
+	max-width: 100%;
+}
+
+// Hovering
+
+.a:hover {
+	transition: 1000ms;
+	transform: scale(1.1, 1.1);
+}
+.c:hover {
+	transition: 1000ms;
+	transform: scale(1.1, 1.1);
+}
+.d:hover {
+	transition: 1000ms;
+	transform: scale(1.1, 1.1);
+}
+.e:hover {
+	transition: 1000ms;
+	transform: scale(1.1, 1.1);
+}
+.f:hover {
+	transition: 1000ms;
+	transform: scale(1.1, 1.1);
+}
+
 // Modal
 
 .modal-window {
@@ -143,23 +177,24 @@ $theme-white: white;
   left: 0;
 	z-index: 1;
 	opacity: 0;
-	overflow: auto;
+	overflow: fixed;
   pointer-events: none;
-  // -webkit-transition: all 0.3s;
-  // -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
   transition: all 0.3s;
   &:target {
     opacity: 1;
     pointer-events: auto;
   }
   &>div {
-		width: 1500px;
-    position: absolute;
+		width: 100%;
+    position: fixed;
     top: 0;
     left: 0;
-    // transform: translate(-50%, -50%);
 		padding: 0px;
 		padding-top: 50px;
+		text-align: center;
+		color: white;
   }
 }
 
@@ -180,11 +215,3 @@ $theme-white: white;
   justify-content: center;
 	align-items: center;
 }
-
-// .interior {
-//   background-color: #fefefe;
-//   margin: 15% auto; /* 15% from the top and centered */
-//   padding: 20px;
-//   border: 1px solid #888;
-//   width: 80%; /* Could be more or less, depending on screen size */
-// }
