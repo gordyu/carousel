@@ -16,6 +16,7 @@
   "dependencies": {
     "@hapi/joi": "^15.0.3",
     "body-parser": "^1.17.0",
+    "cors": "^2.8.5",
     "express": "^4.15.0",
     "faker": "^4.1.0",
     "mongoose": "^4.9.6",
