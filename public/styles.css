@@ -73,7 +73,8 @@ html, body, .App, .carousel {
   grid-gap: 0px;
   grid-template-columns: repeat(4, [col] auto);
   grid-template-rows: repeat(2, [row] auto);
-  background-color: black; }
+  background-color: black;
+  border: solid black 2px; }
 
 .box {
   background-color: black;
@@ -85,7 +86,10 @@ html, body, .App, .carousel {
 
 .a {
   grid-column: col / span 2;
-  grid-row: row; }
+  grid-row: row;
+  max-height: 435px;
+  max-width: 100%;
+  overflow: hidden; }
 
 .b {
   grid-column: col 4 / span 2;
@@ -95,7 +99,7 @@ html, body, .App, .carousel {
   grid-template-columns: 1fr 1fr; }
 
 .c {
-  grid-column: 1 / 4;
+  grid-column: 1;
   grid-row: 1; }
 
 .d {
@@ -110,6 +114,32 @@ html, body, .App, .carousel {
   grid-column: 2;
   grid-row: 2; }
 
+.c, .d, .e, .f {
+  overflow: hidden;
+  position: initial;
+  max-height: 215px;
+  max-width: 100%; }
+
+.a:hover {
+  transition: 1000ms;
+  transform: scale(1.1, 1.1); }
+
+.c:hover {
+  transition: 1000ms;
+  transform: scale(1.1, 1.1); }
+
+.d:hover {
+  transition: 1000ms;
+  transform: scale(1.1, 1.1); }
+
+.e:hover {
+  transition: 1000ms;
+  transform: scale(1.1, 1.1); }
+
+.f:hover {
+  transition: 1000ms;
+  transform: scale(1.1, 1.1); }
+
 .modal-window {
   position: fixed;
   background-color: #3d3838;
@@ -119,19 +149,23 @@ html, body, .App, .carousel {
   left: 0;
   z-index: 1;
   opacity: 0;
-  overflow: auto;
+  overflow: fixed;
   pointer-events: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
   transition: all 0.3s; }
   .modal-window:target {
     opacity: 1;
     pointer-events: auto; }
   .modal-window > div {
-    width: 1500px;
-    position: absolute;
+    width: 100%;
+    position: fixed;
     top: 0;
     left: 0;
     padding: 0px;
-    padding-top: 50px; }
+    padding-top: 50px;
+    text-align: center;
+    color: white; }
 
 .modal-close {
   color: white;

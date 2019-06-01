@@ -8,12 +8,12 @@ const Modal = () => (
       <div className="interior">
 
         <div className="wrapper">
-          <div className="box a"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/0.webp" height="435" width="750" alt="TESTING TESTING"></img></a></div>
+          <div className="box a"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/0.webp" height="434" width="748"></img></a></div>
           <div className="box b">
-            <div className="box c"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/1.webp" height="213" width="380"></img></a></div>
-            <div className="box d"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/2.webp" height="213" width="380"></img></a></div>
-            <div className="box e"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/3.webp" height="213" width="380"></img></a></div>
-            <div className="box f"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/7.webp" height="213" width="380"></img></a></div>
+            <div className="box c"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/1.webp" height="215" width="380"></img></a></div>
+            <div className="box d"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/19.webp" height="215" width="380"></img></a></div>
+            <div className="box e"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/30.webp" height="215" width="380"></img></a></div>
+            <div className="box f"><a className="btn" href="#open-modal"><img src="https://s3-us-west-1.amazonaws.com/propimage55/7.webp" height="215" width="380"></img></a></div>
           </div>
         </div>
 
