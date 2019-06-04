@@ -4,10 +4,8 @@
 
 ## Related Projects
 
-  - https://github.com/5uper5quad/Ja5mine-5ervice
-  - https://github.com/5uper5quad/5arki5-5ervice
-  - https://github.com/5uper5quad/Gloria5-5ervice
-  - https://github.com/5uper5quad/Cam5-5ervice
+  - https://github.com/sdc-team-2/carousel
+  - https://github.com/sdc-team-2/reviews
 
 ## Table of Contents
 
