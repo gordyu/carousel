@@ -10,6 +10,7 @@
     "test": "jest",
     "testmocha": "mocha",
     "generator": "node database/generator.js",
+    "seed-cassandra": "node cassDB/cassandra.js",
     "build": "webpack -d --watch",
     "start": "nodemon --ignore node_modules server"
   },
@@ -21,7 +22,9 @@
     "express": "^4.15.0",
     "faker": "^4.1.0",
     "mongoose": "^4.9.6",
+    "morgan": "^1.9.1",
     "nodemon": "^1.19.0",
+    "promise": "^8.0.3",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",

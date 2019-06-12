@@ -1,11 +1,51 @@
 const cassandra = require('cassandra-driver');
 
-const client = new cassandra.Client({ contactPoints: ['127.0.0.1: 9042'], keyspace: 'home'});
-client.connect()
-.then(x => console.log('connected '))
-.catch(err => console.log('err at connection ', err))
+const client = new cassandra.Client({ contactPoints: ['127.0.0.1: 9042'],localDataCenter: 'datacenter1', keyspace: 'system'});
+client.connect((err) => {
+    if (err) {
+      console.log(err);
+    }
+  });
+(async function start() {
+
+    await client.execute("DROP KEYSPACE IF EXISTS home").then(async () => {
+      console.log('dropped home');
+      await client.execute("CREATE KEYSPACE IF NOT EXISTS home WITH replication = {'class':'SimpleStrategy', 'replication_factor':2}").then(() => {
+        console.log('created keyspace home')
+        client.execute("USE home", function () {
+          console.log('switched to keyspace home');
+  
+        });
+      }).then(async () => {
+        await seed()
+        await client.shutdown().then(() => {
+          console.log('cassandra connection shut down')
+        });
+      })
+    })
+  })()
 
 
+// //
+async function seed() {
+    await client.execute('CREATE TABLE home.homeInfo (home_id  INT PRIMARY KEY, imageURL TEXT, description TEXT )');
+    // console.time('clock')
+    
+    var batchsize = 14
+    for (var i = 0; i < 10000000 / batchsize; i++) {
+      var batch = [];
+      for (var j = 0; j < batchsize; j++) {
+        var temp = dataGen(i * batchsize + j);
+        batch.push({ query: 'INSERT INTO home.homeInfo JSON ?', params: [JSON.stringify(temp)] })
+        await client.execute('INSERT INTO cartitems.items JSON ?;', [JSON.stringify(temp)]);
+  
+      }
+      await client.batch(batch);
+       console.log(i);
+    }
+    console.timeEnd('clock')
+  }
+//
 
 // - GET -
 const getAllHomeInfos = (propertyId) => {
