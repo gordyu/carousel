@@ -2,8 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-// const db = require('../database/index');
-const db = require('../cassDB/cassandra');
+const db = require('../database/index');
+// const db = require('../database/cassandra');
 const app = express();
 const port = 3004;
 

@@ -1,8 +1,10 @@
 
 const Home = require('./index');
+// const Home = require('./cassandra');
 const faker = require('faker');
 
-let seeds = [];
+
+var seeds = [];
 
 for (var i = 0; i < 43; i++) {
   seeds.push(Home.Home({
@@ -34,3 +36,4 @@ Home.Home.deleteMany({}, (err) => {
     });
   }
 });
+// module.exports

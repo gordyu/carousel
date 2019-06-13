@@ -10,7 +10,7 @@
     "test": "jest",
     "testmocha": "mocha",
     "generator": "node database/generator.js",
-    "seed-cassandra": "node cassDB/cassandra.js",
+    "seed-cassandra": "node database/cassandra.js",
     "build": "webpack -d --watch",
     "start": "nodemon --ignore node_modules server"
   },
