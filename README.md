@@ -27,6 +27,14 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ## Development
 
+###CRUD api
+
+```
+- GET: '/homes' - This route should send back the homeinfo for a home by the home ID 
+- POST: '/homes' - This route should post new homeinfo 
+- PUT: '/homes:id' - This route should update the homeinfo post 
+- DELETE: '/homes:id' - This route should delete the lastest post
+```
 ### Installing Dependencies
 
 From within the root directory:

@@ -1,8 +1,11 @@
 
 ## MAC files ##
 .DS_Store
-
+## data ##
+data.csv
 ## NPM ##
+
+
 npm
 npm-debug.log
 node_modules/
