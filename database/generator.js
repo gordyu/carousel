@@ -28,8 +28,8 @@ fs.writeFile(filepath, '', (err) => {
       console.log(`Error opening document`);
       return;
     }
-    let limit = 10000000;
-    // let limit = 10;
+    // let limit = 10000;
+    let limit = 10;
 
     console.log(`Successfully opened data.csv file at ${Date()}`);
     console.log(`Creating ${limit} rows for data.csv file at ${Date()}`);

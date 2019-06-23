@@ -25,21 +25,19 @@ pool.connect((err) => {
 //     imageURL VARCHAR(240) NOT NULL,
 //     description VARCHAR(300) NOT NULL
 // );
-const getHomeinfo = function (req, res) {
-    pool.query('SELECT * FROM homeinfo ORDER BY propertyId ASC fetch first 12 rows only', (error, results)=> {
-      if (error) {
-        throw error
-      }
-   //  console.log( res)
-      res.json(results.rows)
-    })
+// think  though 
+const getHomeinfo = function (query, callback) {
+    pool.query('SELECT * FROM homeinfo ORDER BY propertyId ASC fetch first 12 rows only', callback);
    //console.log(results.rows)
  };
  const createHomeinfo= function (req, res) {
-    pool.query('INSERT INTO Homeinfos (propertyId, imageURL, description) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *',  [req.propertyId, req.imageURL, req.description])
+    pool.query('INSERT INTO homeinfo (propertyId, imageURL, description) VALUES ($1, $2, $3) RETURNING *',  [req.propertyId, req.imageURL, req.description])
       .then(res => {
        console.log(res.rows[0])
       })
       .catch(e => console.error(e.stack))
   }
-
+  module.exports= {
+    getHomeinfo,
+    createHomeinfo
+  }

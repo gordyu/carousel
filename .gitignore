@@ -2,7 +2,7 @@
 ## MAC files ##
 .DS_Store
 ## data ##
-data.csv
+ database/data.csv
 ## NPM ##
 
 
