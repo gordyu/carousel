@@ -25,17 +25,13 @@ pool.connect((err) => {
 //     imageURL VARCHAR(240) NOT NULL,
 //     description VARCHAR(300) NOT NULL
 // );
-// think  though 
+// think 
 const getHomeinfo = function (query, callback) {
     pool.query('SELECT * FROM homeinfo ORDER BY propertyId ASC fetch first 12 rows only', callback);
    //console.log(results.rows)
  };
- const createHomeinfo= function (req, res) {
-    pool.query('INSERT INTO homeinfo (propertyId, imageURL, description) VALUES ($1, $2, $3) RETURNING *',  [req.propertyId, req.imageURL, req.description])
-      .then(res => {
-       console.log(res.rows[0])
-      })
-      .catch(e => console.error(e.stack))
+ const createHomeinfo= function (query, callback) {
+    pool.query('INSERT INTO homeinfo (propertyId, imageURL, description) VALUES ($1, $2, $3) RETURNING *', callback);
   }
   module.exports= {
     getHomeinfo,
